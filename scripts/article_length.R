@@ -15,11 +15,11 @@ geom_point(width=1, size = I(1.3), color="#42C4C7", alpha=.45) +
 scale_y_continuous(breaks=seq(0,60,5), labels=nolead0s(seq(0,60,5)), lim=c(0,60)) + 
 scale_x_continuous(breaks=seq(1900,2020,10), labels=nolead0s(seq(1900,2020,10)), lim=c(1905,2015)) +
 expand_limits(x = 0, y = 1900) + 
-ylab("Number of Pages Per Article")+
+ylab("Number of Pages per Article")+
 xlab("Publication Year")+
 theme_minimal()+
 theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
-	  panel.grid.minor.x = element_blank(),
+	  panel.grid.minor   =  element_blank(),
 	  panel.grid.major.x = element_line(colour = "#f7f7f7", linetype = "solid"),
 	  panel.border       = element_blank(),
 	  legend.position  = "bottom",
@@ -32,7 +32,7 @@ theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted")
 	  axis.line.x  = element_line(colour = 'red', size = 3, linetype = 'dashed'),
 	  axis.title.x = element_text(vjust=-1),
 	  axis.title.y = element_text(vjust= 1),
-	  axis.ticks = element_line(color="#cccccc"),
+	  axis.ticks.x = element_line(color="#e3e3e3", size=.2),
 	  plot.margin = unit(c(0,.5,.5,.5), "cm"))
 
 ggsave("figs/n_pages_per_article_over_time.pdf")

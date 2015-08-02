@@ -25,7 +25,7 @@ ylab("No. of pages in each volume")+
 xlab("Publication Year")+
 theme_minimal()+
 theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
-	  panel.grid.minor.x = element_blank(),
+	  panel.grid.minor   =  element_blank(),
 	  panel.grid.major.x = element_line(colour = "#f7f7f7", linetype = "solid"),
 	  panel.border       = element_blank(),
 	  legend.position  = "bottom",
@@ -37,7 +37,7 @@ theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted")
 	  axis.line.x  = element_line(colour = 'red', size = 3, linetype = 'dashed'),
 	  axis.title.x = element_text(vjust=-1),
 	  axis.title.y = element_text(vjust= 1),
-	  axis.ticks = element_line(color="#cccccc"),
+	  axis.ticks.x = element_line(color="#e3e3e3", size=.2),
 	  plot.margin = unit(c(0,.5,.5,.5), "cm"))
 
 ggsave("figs/pages_per_issue_over_time.pdf")
