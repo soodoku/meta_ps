@@ -8,7 +8,7 @@ import urllib2
 #import sys
 
 START_LINK = "http://journals.cambridge.org/action/displayBackIssues?jid=PSR"
-FINAL_OUTPUT_FILE = "article_output.csv"
+FINAL_OUTPUT_FILE = "apsr_data.csv"
 
 AUTHORS_HEADER=""
 MAX_AUTHORS_NUMBER = 10

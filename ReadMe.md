@@ -11,7 +11,8 @@ To scrape meta data and abstract for all APSR articles from [APSR](http://journa
 **Requirements:** `urllib2`
 
 * INPUT: [Links to all the issues](http://journals.cambridge.org/action/displayBackIssues?jid=PSR)
-* OUTPUT: Each row in the csv is a separate article. 
+* OUTPUT: [apsr_data.csv](data/apsr_data.csv)  
+  Each row in the csv is a separate article. 
   csv file with following cols:
    + article.url
    + issue.year
@@ -28,7 +29,7 @@ To scrape meta data and abstract for all APSR articles from [APSR](http://journa
 **Options:**  
 
 * START_LINK: http://journals.cambridge.org/action/displayBackIssues?jid=PSR
-* FINAL_OUTPUT_FILE: name of the output file. e.g. FINAL_OUTPUT_FILE = article_output.csv
+* FINAL_OUTPUT_FILE: name of the output file. e.g. FINAL_OUTPUT_FILE = [apsr_data.csv](data/apsr_data.csv)
 * HEADER: Column names in the output file
 
 **Note:**
