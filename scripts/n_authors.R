@@ -36,3 +36,4 @@ theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted")
 	  plot.margin = unit(c(0,.5,.5,.5), "cm"))
 
 ggsave("figs/n_authors_per_article_over_time.pdf")
+ggsave("figs/n_authors_per_article_over_time.png")
