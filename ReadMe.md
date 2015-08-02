@@ -1,4 +1,4 @@
-### Trends in Scholarly Production and Consumption of APSR
+### Trends in Production and Consumption of APSR Articles
 
 American Political Science Review has been the pre-eminent journal in political science since its inception. Here I analyze some over time trends in production and consumption of APSR articles.
 
