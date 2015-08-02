@@ -1,4 +1,8 @@
-### Trends in Scholarly Production in the American Political Science Review
+### Trends in Scholarly Production and Consumption of APSR
+
+American Political Science Review has been the pre-eminent journal in political science since its inception. Here I analyze some over time trends in production and consumption of APSR articles.
+
+#### Table of Contents:
 
 * [Some Results](#results)
 * [Scraping the (meta) data](#get-the-meta-data)
@@ -16,7 +20,7 @@ The data show that till well into 1960s, average article published in the [APSR]
 
 Over the past 100 or so years, [article length](figs/article_length.pdf) has shown marked variability. There is a marked see-saw pattern in the average length of the article but unlike top economics journals, we don't see a marked trend towards longer articles. It is very likely, however, that the length of online appendices has grown substantially. 
 
-No. of views an [article](figs/fulltext_views.pdf) or [abstract](figs/abstract_views.pdf) has received follows the familiar power law distribution with most articles receiving very few views. 
+Number of views an [article](figs/fulltext_views.pdf) or [abstract](figs/abstract_views.pdf) has received follows the familiar power law distribution with most articles receiving very few views. 
 
 ----- 
 
