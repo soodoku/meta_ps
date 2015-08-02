@@ -6,10 +6,11 @@ Run some data quality checks (more needed)
 "
 
 # Load libs
-library(ggplot2)
 # devtools::install_github("soodoku/goji")
 library(goji)
 library(plyr)
+library(ggplot2)
+library(grid)
 
 # setwd
 setwd(githubdir)

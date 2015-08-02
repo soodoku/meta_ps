@@ -1,14 +1,22 @@
-### Meta APSR
+### Meta APSR: Scrape and analyze abstracts and meta data of [American Political Science Review](http://journals.cambridge.org/action/displayJournal?jid=PSR) articles.
 
-Scrape and analyze abstracts and meta data of [American Political Science Review](http://journals.cambridge.org/action/displayJournal?jid=PSR) articles.
+* [Some Results](#results)
 * [Script for Getting the (Meta) Data](#get-the-meta-data)
 * [The data and the codebook](#data)
 * [Scripts for producing the graphs and graphs](#analyze-the-data)
 * Related: [Proportion of precise quantitative statements in APSR abstracts](https://github.com/soodoku/quant-discipline)
 
+----
+
+#### Results
+
 The data show that till well into 1960s, average article published in the APSR was solo-authored. Today, co-authored papers are the norm.
+
 ![No. of authors over time](figs/n_authors_per_article_over_time.png)
 
+Over the past 100 or so years, [article length](figs/article_length.pdf) has shown marked variability. There is a marked see-saw pattern in the average length of the article but unlike top economics journals, we don't see a marked trend towards longer articles. It is very likely, however, that the length of online appendices has grown substantially. 
+
+No. of views an [article](figs/fulltext_views.pdf) or [abstract](figs/abstract_views.pdf) has received follows the familiar power law distribution with most articles receiving very few views.  
 
 #### Get the (Meta) Data
 
@@ -45,6 +53,8 @@ Each row in the csv is a separate article. And the columns are:
 * Number of authors per article over time. ([Script](scripts/n_authors.R), [Graph](figs/n_authors_per_article_over_time.pdf))  
 * Number of articles per issue over time. ([Script](scripts/articles_per_issue.R), [Graph](figs/articles_per_issue_over_time.pdf))  
 * Number of pages per issue over time. ([Script](scripts/issue_length.R), [Graph](figs/pages_per_issue_over_time.pdf))  
+* Distribution of full text views. ([Script](scripts/fulltext_views.R), [Graph](figs/fulltext_views.pdf))  
+* Distribution of abstract views. ([Script](scripts/abstract_views.R), [Graph](figs/abstract_views.pdf))  
 
 #### License
 
