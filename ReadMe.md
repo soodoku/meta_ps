@@ -38,8 +38,10 @@ The script allows for interruption. If interrupted, it will restart from where i
 ### Analyze the Data
 
 * [Recode the data](scripts/meta_apsr.R)
-* Article lengths (measured by number of pages) over time. ([Script](scripts/length.R), [Graph](figs/page_lengths.pdf))  
-* Number of authors per article over time. ([Script](scripts/authors.R), [Graph](figs/n_authors.pdf))  
+* Article lengths (measured by number of pages) over time. ([Script](scripts/article_length.R), [Graph](figs/n_pages_per_article_over_time.pdf))  
+* Number of authors per article over time. ([Script](scripts/n_authors.R), [Graph](figs/n_authors_per_article_over_time.pdf))  
+* Number of articles per issue over time. ([Script](scripts/articles_per_issue.R), [Graph](figs/articles_per_issue_over_time.pdf))  
+* Number of pages per issue over time. ([Script](scripts/issue_length.R), [Graph](figs/pages_per_issue_over_time.pdf))  
 
 ### Related
 
