@@ -6,35 +6,40 @@ Scrape and analyze abstracts and meta data of American Political Science Review 
 
 To scrape meta data and abstract for all APSR articles from [APSR](http://journals.cambridge.org/action/displayBackIssues?jid=PSR), use [get_apsr_data.py](scripts/get_apsr_data.py).
 
-#### Details about the script:
+#### Usage
 
-**Requirements:** `urllib2`
+**Run:**  
+`python get_apsr_data.py`
 
-* INPUT: [Links to all the issues](http://journals.cambridge.org/action/displayBackIssues?jid=PSR)
-* OUTPUT: [apsr_data.csv](data/apsr_data.csv)  
-  Each row in the csv is a separate article. 
-  csv file with following cols:
-   + article.url
-   + issue.year
-   + issue.volume
-   + issue.date.of.publication
-   + issue.pages
-   + article.title
-   + article.abstract
-   + article.pages
-   + 10 colums e.g author1, institution1, etc, ...,author1, institution1 
-   + article.abstract.views
-   + article.full.text.views
+**Depends on:**  
+`urllib2`
 
-**Options:**  
+* Required Input: 
+   * [APSR page linking to all the issues](http://journals.cambridge.org/action/displayBackIssues?jid=PSR)
+   * On line 10, specify the APSR page as the START_LINK: http://journals.cambridge.org/action/displayBackIssues?jid=PSR
 
-* START_LINK: http://journals.cambridge.org/action/displayBackIssues?jid=PSR
-* FINAL_OUTPUT_FILE: name of the output file. e.g. FINAL_OUTPUT_FILE = [apsr_data.csv](data/apsr_data.csv)
-* HEADER: Column names in the output file
+* Optional Input:
+   * Name of the output file. Specify `FINAL_OUTPUT_FILE` on line 11 of [get_apsr_data.py](scripts/get_apsr_data.py).
+   * Column names. Specify `HEADER` on Line 18 of [get_apsr_data.py](scripts/get_apsr_data.py).
+
+* Output: 
+   * Data: [apsr_data.csv](data/apsr_data.csv)  
+   * Each row in the csv is a separate article. And the columns are:
+      * article.url
+      * issue.year
+      * issue.volume 
+      * issue.date.of.publication
+      * issue.pages
+      * article.title
+      * article.abstract
+      * article.pages
+      * 10 colums e.g author1, institution1, etc, ...,author1, institution1 
+      * article.abstract.views
+      * article.full.text.views
 
 **Note:**
 
-The script allows for interruption. If interrupted, it will restart from where it was aborted. And it will append the results to the existing output file.
+The script allows for interruption. If interrupted, it will restart from where it stopped. And it will append the results to the existing output file.
 
 ### Analyze the Data
 
