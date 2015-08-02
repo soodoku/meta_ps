@@ -1,7 +1,7 @@
-### Meta APSR: Scrape and analyze abstracts and meta data of [American Political Science Review](http://journals.cambridge.org/action/displayJournal?jid=PSR) articles.
+### Scrape and Analyze Meta Data of American Political Science Review Articles
 
 * [Some Results](#results)
-* [Script for Getting the (Meta) Data](#get-the-meta-data)
+* [Scraping the (meta) data](#get-the-meta-data)
 * [The data and the codebook](#data)
 * [Scripts for producing the graphs and graphs](#analyze-the-data)
 * Related: [Proportion of precise quantitative statements in APSR abstracts](https://github.com/soodoku/quant-discipline)
@@ -10,13 +10,15 @@
 
 #### Results
 
-The data show that till well into 1960s, average article published in the APSR was solo-authored. Today, co-authored papers are the norm.
+The data show that till well into 1960s, average article published in the [APSR](http://journals.cambridge.org/action/displayJournal?jid=PSR) was solo-authored. Today, co-authored papers are the norm.
 
 ![No. of authors over time](figs/n_authors_per_article_over_time.png)
 
 Over the past 100 or so years, [article length](figs/article_length.pdf) has shown marked variability. There is a marked see-saw pattern in the average length of the article but unlike top economics journals, we don't see a marked trend towards longer articles. It is very likely, however, that the length of online appendices has grown substantially. 
 
-No. of views an [article](figs/fulltext_views.pdf) or [abstract](figs/abstract_views.pdf) has received follows the familiar power law distribution with most articles receiving very few views.  
+No. of views an [article](figs/fulltext_views.pdf) or [abstract](figs/abstract_views.pdf) has received follows the familiar power law distribution with most articles receiving very few views. 
+
+----- 
 
 #### Get the (Meta) Data
 
