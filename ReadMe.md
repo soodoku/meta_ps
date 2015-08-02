@@ -1,10 +1,10 @@
-### Scrape and Analyze Meta Data of American Political Science Review Articles
+### Trends in Scholarly Production in the American Political Science Review
 
 * [Some Results](#results)
 * [Scraping the (meta) data](#get-the-meta-data)
 * [The data and the codebook](#data)
 * [Scripts for producing the graphs and graphs](#analyze-the-data)
-* Related: [Proportion of precise quantitative statements in APSR abstracts](https://github.com/soodoku/quant-discipline)
+* **Related:** [Proportion of precise quantitative statements in APSR abstracts](https://github.com/soodoku/quant-discipline)
 
 ----
 
