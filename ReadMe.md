@@ -1,6 +1,6 @@
 ### Trends in Production and Consumption of APSR Articles
 
-American Political Science Review has been the pre-eminent journal in political science since its inception. Here I analyze some over time trends in production and consumption of APSR articles.
+The American Political Science Review has been the pre-eminent journal in political science since its inception. Here, I analyze some trends in production and consumption of APSR articles.
 
 #### Table of Contents:
 
@@ -14,11 +14,11 @@ American Political Science Review has been the pre-eminent journal in political 
 
 #### Results
 
-The data show that till well into 1960s, average article published in the [APSR](http://journals.cambridge.org/action/displayJournal?jid=PSR) was solo-authored. Today, co-authored papers are the norm.
+The data show that till well into the 1960s, the average article published in the [APSR](http://journals.cambridge.org/action/displayJournal?jid=PSR) was solo-authored. Today, co-authored papers are the norm.
 
 ![No. of authors over time](figs/n_authors_per_article_over_time.png)
 
-Over the past 100 or so years, [article length](figs/article_length.pdf) has shown marked variability. There is a marked see-saw pattern in the average length of the article but unlike top economics journals, we don't see a marked trend towards longer articles. It is very likely, however, that the length of online appendices has grown substantially. 
+Over the past 100 or so years, [article length](figs/article_length.pdf) has shown marked variability. There is a marked see-saw pattern in the average length of the article, but unlike top economics journals we don't see a marked trend towards longer articles. It is very likely, however, that the length of online appendices has grown substantially. 
 
 Number of views an [article](figs/fulltext_views.pdf) or [abstract](figs/abstract_views.pdf) has received follows the familiar power law distribution with most articles receiving very few views. 
 
