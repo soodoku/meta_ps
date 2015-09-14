@@ -62,7 +62,7 @@ Each row in the csv is a separate article. And the columns are:
 * Distribution of full text views. ([Script](scripts/fulltext_views.R), [Graph](figs/fulltext_views.pdf))  
 * Distribution of abstract views. ([Script](scripts/abstract_views.R), [Graph](figs/abstract_views.pdf))  
 * Based on the idea by [titleogy](http://datacolada.org/2013/12/04/titleogy/), Length of title.
+* Proportion of Female Authors.
 
 #### License
-
 Released under the [MIT License](License.md)
