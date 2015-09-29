@@ -61,9 +61,8 @@ Each row in the csv is a separate article. And the columns are:
 * Number of pages per issue over time. ([Script](scripts/issue_length.R), [Graph](figs/pages_per_issue_over_time.pdf))  
 * Distribution of full text views. ([Script](scripts/fulltext_views.R), [Graph](figs/fulltext_views.pdf))  
 * Distribution of abstract views. ([Script](scripts/abstract_views.R), [Graph](figs/abstract_views.pdf)) 
-* Average number of women on an article. ([Script](scripts/gender_authors.R), [Graph](figs/gender_authors_per_article_over_time.pdf)) 
+* Proportion of Female Authors per article. ([Script](scripts/gender_authors.R), [Graph](figs/gender_authors_per_article_over_time.pdf)) 
 * Based on the idea by [titleogy](http://datacolada.org/2013/12/04/titleogy/), Length of title.
-* Proportion of Female Authors.
 
 #### License
 Released under the [MIT License](License.md)
