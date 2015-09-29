@@ -1,6 +1,6 @@
 "
 Meta APSR
-Number of authors per article over time
+Avg. Gender of Authors over time
 @author Gaurav Sood
 
 "
@@ -9,13 +9,13 @@ Number of authors per article over time
 source("meta_apsr.R")
 
 # Plot
-ggplot(apsr, aes(issue.year, n.authors)) + 
+ggplot(apsr, aes(issue.year, avg_gender)) + 
 geom_smooth(method = "loess", span=.3, colour="#ccccff", alpha=0.3) +
 geom_point(width=1, size = I(1.3), color="#42C4C7", alpha=.35) +
-scale_y_continuous(breaks=seq(0,8,1), labels=nolead0s(seq(0,8,1)), lim=c(0,8)) + 
+scale_y_continuous(breaks=seq(0,1,.1), labels=nolead0s(seq(0,1,.1)), lim=c(0,1)) + 
 scale_x_continuous(breaks=seq(1900,2020,10), labels=nolead0s(seq(1900,2020,10)), lim=c(1905,2015)) +
 expand_limits(x = 0, y = 1900) + 
-ylab("Number of Authors Per Article")+
+ylab("Mean Gender of Authors (Female = 1)")+
 xlab("Publication Year")+
 theme_minimal()+
 theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
@@ -35,10 +35,7 @@ theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted")
 	  axis.ticks.x = element_line(color="#e3e3e3", size=.2),
 	  plot.margin = unit(c(0,.5,.5,.5), "cm"))
 
-ggsave("figs/n_authors_per_article_over_time.pdf")
-ggsave("figs/n_authors_per_article_over_time.png", height=2.5)
+ggsave("figs/gender_authors_per_article_over_time.pdf")
+ggsave("figs/gender_authors_per_article_over_time.png", height=2.5)
 
 
-# Gender
-library(gender)
-sapply(strsplit(apsr$author1, " "), "[", 1)
