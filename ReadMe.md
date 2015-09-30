@@ -65,4 +65,4 @@ Each row in the csv is a separate article. And the columns are:
 * Based on the idea by [titleogy](http://datacolada.org/2013/12/04/titleogy/), Length of title.
 
 #### License
-Released under the [MIT License](License.md)
+Released under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
