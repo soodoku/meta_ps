@@ -4,7 +4,6 @@ Avg. Gender of Authors over time
 @author Gaurav Sood
 
 "
-
 # Source recode file
 source("meta_apsr.R")
 
