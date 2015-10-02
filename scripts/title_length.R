@@ -35,3 +35,4 @@ theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted")
 	  axis.ticks.x = element_line(color="#e3e3e3", size=.2),
 	  plot.margin = unit(c(0,.5,.5,.5), "cm"))
 ggsave("figs/title_len_over_time.pdf")
+ggsave("figs/title_len_over_time.png", height=2.5)
