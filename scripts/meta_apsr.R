@@ -73,16 +73,22 @@ apsr$firstname_author6  <- sapply(strsplit(apsr$author6, " "), "[", 1)
 apsr$firstname_author7  <- sapply(strsplit(apsr$author7, " "), "[", 1)
 
 apsr[,paste0("gender_author", 1:7)] <- NA
+
+# Gender pkg issues
+# ~~ Taking age uniform b/w 25 to 65 yrs
+# ~~~ 1880 to 2012
+# ~~~ ceiling of year range when it bumps against the bottom--- not appetizing but probably that big a deal; people can investigate
+
 for (i in 1:nrow(apsr)){
-	if (apsr$issue.year[i] < 2013) {
-		apsr$gender_author1[i] <- ifelse(is.na(apsr$firstname_author1[i]), NA, gender(apsr$firstname_author1[i], apsr$issue.year[i])$proportion_female)
-		apsr$gender_author2[i] <- ifelse(is.na(apsr$firstname_author2[i]), NA, gender(apsr$firstname_author2[i], apsr$issue.year[i])$proportion_female)
-		apsr$gender_author3[i] <- ifelse(is.na(apsr$firstname_author3[i]), NA, gender(apsr$firstname_author3[i], apsr$issue.year[i])$proportion_female)
-		apsr$gender_author4[i] <- ifelse(is.na(apsr$firstname_author4[i]), NA, gender(apsr$firstname_author4[i], apsr$issue.year[i])$proportion_female)
-		apsr$gender_author5[i] <- ifelse(is.na(apsr$firstname_author5[i]), NA, gender(apsr$firstname_author5[i], apsr$issue.year[i])$proportion_female)
-		apsr$gender_author6[i] <- ifelse(is.na(apsr$firstname_author6[i]), NA, gender(apsr$firstname_author6[i], apsr$issue.year[i])$proportion_female)
-		apsr$gender_author7[i] <- ifelse(is.na(apsr$firstname_author7[i]), NA, gender(apsr$firstname_author7[i], apsr$issue.year[i])$proportion_female)
-	}
+	
+	lowerbound <- ifelse(apsr$issue.year[i] - 65 < 1880, 1880, apsr$issue.year[i] - 65)
+	apsr$gender_author1[i] <- ifelse(is.na(apsr$firstname_author1[i]), NA, gender(apsr$firstname_author1[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
+	apsr$gender_author2[i] <- ifelse(is.na(apsr$firstname_author2[i]), NA, gender(apsr$firstname_author2[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
+	apsr$gender_author3[i] <- ifelse(is.na(apsr$firstname_author3[i]), NA, gender(apsr$firstname_author3[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
+	apsr$gender_author4[i] <- ifelse(is.na(apsr$firstname_author4[i]), NA, gender(apsr$firstname_author4[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
+	apsr$gender_author5[i] <- ifelse(is.na(apsr$firstname_author5[i]), NA, gender(apsr$firstname_author5[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
+	apsr$gender_author6[i] <- ifelse(is.na(apsr$firstname_author6[i]), NA, gender(apsr$firstname_author6[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
+	apsr$gender_author7[i] <- ifelse(is.na(apsr$firstname_author7[i]), NA, gender(apsr$firstname_author7[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
 }
 
 apsr$avg_gender <- with(apsr, rowMeans(cbind(gender_author1, gender_author2, gender_author3, gender_author4, gender_author5, gender_author6, gender_author7), na.rm=T))

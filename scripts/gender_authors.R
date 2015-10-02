@@ -14,7 +14,7 @@ geom_point(width=1, size = I(1.3), color="#42C4C7", alpha=.35) +
 scale_y_continuous(breaks=seq(0,1,.1), labels=nolead0s(seq(0,1,.1)), lim=c(0,1)) + 
 scale_x_continuous(breaks=seq(1900,2020,10), labels=nolead0s(seq(1900,2020,10)), lim=c(1905,2015)) +
 expand_limits(x = 0, y = 1900) + 
-ylab("Mean Gender of Authors (Female = 1)")+
+ylab("Porportion of Female Authors per Paper")+
 xlab("Publication Year")+
 theme_minimal()+
 theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
