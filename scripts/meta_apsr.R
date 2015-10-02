@@ -94,5 +94,6 @@ for (i in 1:nrow(apsr)){
 apsr$avg_gender <- with(apsr, rowSums(cbind(gender_author1, gender_author2, gender_author3, gender_author4, gender_author5, gender_author6, gender_author7), na.rm=T))/apsr$n.authors
 
 # Length of title
-# Some serious issues: apsr$article.title[apsr$title_len > 200]
+# Some issues: apsr$article.title[apsr$title_len > ]
+# One issue is just with book reviews. We need to take those out
 apsr$title_len <- nchar(apsr$article.title)

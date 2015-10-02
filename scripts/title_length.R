@@ -5,14 +5,17 @@ Title Length Over Time
 
 "
 
+# Take out titles with nchar 150 as they are generally book reviews -- n=41
+apsr <- subset(apsr, title_len <= 150)
+
 # Plot
 ggplot(apsr, aes(issue.year, title_len)) + 
-geom_smooth(method = "loess", span=.3, colour="#ccccff", alpha=0.3) +
+geom_smooth(method = "loess", span=.4, colour="#ccccff", alpha=0.4) +
 geom_point(width=1, size = I(1.3), color="#42C4C7", alpha=.35) +
-scale_y_continuous(breaks=seq(0, 700, 50), labels=nolead0s(seq(0, 700, 50)), lim=c(0, 700)) + 
+scale_y_continuous(breaks=seq(0, 150, 25), labels=nolead0s(seq(0, 150, 25)), lim=c(0, 150)) + 
 scale_x_continuous(breaks=seq(1900,2020,10), labels=nolead0s(seq(1900,2020,10)), lim=c(1905,2015)) +
 expand_limits(x = 0, y = 1900) + 
-ylab("Porportion of Female Authors per Paper")+
+ylab("Number of Characters in the Article Title")+
 xlab("Publication Year")+
 theme_minimal()+
 theme(panel.grid.major.y = element_line(colour = "#e3e3e3", linetype = "dotted"),
