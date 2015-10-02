@@ -62,7 +62,7 @@ Each row in the csv is a separate article. And the columns are:
 * Distribution of full text views. ([Script](scripts/fulltext_views.R), [Graph](figs/fulltext_views.pdf))  
 * Distribution of abstract views. ([Script](scripts/abstract_views.R), [Graph](figs/abstract_views.pdf)) 
 * Proportion of Female Authors per article. ([Script](scripts/gender_authors.R), [Graph](figs/gender_authors_per_article_over_time.pdf)) 
-* Based on the idea by [titleogy](http://datacolada.org/2013/12/04/titleogy/), Length of title.
+* Based on the idea by [titleogy](http://datacolada.org/2013/12/04/titleogy/), Length of title. ([Script](scripts/title_length.R), [Graph](figs/title_len_over_time.pdf)) 
 
 #### License
 Released under [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/).
