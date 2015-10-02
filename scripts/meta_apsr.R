@@ -91,4 +91,4 @@ for (i in 1:nrow(apsr)){
 	apsr$gender_author7[i] <- ifelse(is.na(apsr$firstname_author7[i]), NA, gender(apsr$firstname_author7[i], c(lowerbound, apsr$issue.year[i] - 25))$proportion_female)
 }
 
-apsr$avg_gender <- with(apsr, rowMeans(cbind(gender_author1, gender_author2, gender_author3, gender_author4, gender_author5, gender_author6, gender_author7), na.rm=T))
+apsr$avg_gender <- with(apsr, rowSums(cbind(gender_author1, gender_author2, gender_author3, gender_author4, gender_author5, gender_author6, gender_author7), na.rm=T))/apsr$n.authors
