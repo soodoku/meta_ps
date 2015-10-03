@@ -97,3 +97,12 @@ apsr$avg_gender <- with(apsr, rowSums(cbind(gender_author1, gender_author2, gend
 # Some issues: apsr$article.title[apsr$title_len > ]
 # One issue is just with book reviews. We need to take those out
 apsr$title_len <- nchar(apsr$article.title)
+
+# What proportion of research comes from authors at elite institutions?
+# What is elite?
+# Adhoc list: Harvard University, Yale University, Massachusetts Institute of Technology (MIT), Princeton University, Stanford University, University of Oxford, 
+# University of California, Berkeley, University of Michigan
+
+
+# Has co-authorship across schools increased?
+# Probably ... evidence here

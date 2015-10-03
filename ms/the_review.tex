@@ -1,4 +1,4 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage{color}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \definecolor{dark-red}{rgb}{0.7,0.1,0.1} 
@@ -14,6 +14,10 @@
             pdftitle={The Review}]{hyperref}
             
 \usepackage{amsfonts,amssymb,amsbsy,amsmath,amsxtra}
+
+\usepackage[letterspace=1000]{microtype}
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
 
 \usepackage{indentfirst}
 \usepackage{setspace} % To set line spacing
@@ -43,20 +47,23 @@ setwd(paste0(githubdir, "/meta_apsr/"))
 \end{comment}
 
 \begin{document}
-\title{\vspace{-1cm}\normalsize{\textbf{The Review: Production and Consumption of APSR Articles}}}
-\author{Gaurav Sood\\\small{\href{mailto:gsood07@gmail.com}{\tt{gsood07@gmail.com}}}}
+\title{\vspace{-.5cm}\normalsize{The Review: Production and Consumption of APSR Articles}}
+\author{\vspace{.2cm}\\\normalsize{Gaurav Sood}\\\href{mailto:gsood07@gmail.com}{\small{gsood07@gmail.com}}\vspace{.3cm}\\}
+\date{\normalsize{October 3rd, 2015}}
 \maketitle
 \begin{center}
-\vspace{-.5cm}\textbf{NB:} Preliminary draft. Please do not cite without permission.
+\textbf{NB:} Preliminary draft. Please do not cite without permission.
 \end{center}
-\vspace{.2cm}
+\vspace{.4cm}
 \doublespacing
 
-Scientific production is affected by a variety of variables that have little to do with the science. Availability of funding, how long it takes to observe outcomes \citep{budish2013firms}, fads, what position the article is listed at in email digests of research\footnote{Papers listed first get a 27\% more citations than papers listed at other locations. See \href{http://www.npr.org/2015/07/15/423101360/no-1-with-a-bullet-point-to-get-research-cited-make-sure-its-listed-first}{http://www.npr.org/2015/07/15/423101360/no-1-with-a-bullet-point-to-get-research-cited-make-sure-its-listed-first}.}, various parts of the scientific paper production pipeline, including, limits on journal space \citep{card2014page}, the number of articles editors must review, the incentives to be nice to the author, all affect what topic is researched, the quality of research, and who produces the research and how many read it. 
+Scientific production is affected by a variety of variables that have little to do with science. For instance, investment in research is correlated with commercialization lags --- greater the lags, lower the investment \citep{budish2013firms}.\footnote{The article posits that later stage cancer drugs have smaller commercialization lags. It isn't clear why. But the general point likely holds.} On the flip side, minor changes to how research is delivered can have astonishingly large consequences for consumption of research. For instance, papers listed first get a 27\% more citations than papers listed at other locations.\footnote{ See \href{http://www.npr.org/2015/07/15/423101360/no-1-with-a-bullet-point-to-get-research-cited-make-sure-its-listed-first}{http://www.npr.org/2015/07/15/423101360/no-1-with-a-bullet-point-to-get-research-cited-make-sure-its-listed-first}.} More generally, a broad range of factors, from availability of funding to fads to various parts of the scientific paper production pipeline, including, the number of articles editors must review, the incentives to be nice to the author, likely affect what topic is researched, the quality of the research, who produces the research, and how many read it. 
 
-Using data on all articles published in the The American Political Science Review, the preeminent journal in political science since its inception nearly a hundred years ago, I shed light on some of those issues in political science.\footnote{The data and scripts to acquire, process and analyze the data can be downloaded from \href{https://github.com/soodoku/meta_apsr}{https://github.com/soodoku/meta\_apsr}.} 
+Using an original dataset of rich meta data on all articles published in the The American Political Science Review, the preeminent political science journal since its inception nearly a hundred years ago, I shed light on some of these issues.\footnote{The data and scripts to acquire, process and analyze the data can be downloaded from \href{https://github.com/soodoku/meta_apsr}{https://github.com/soodoku/meta\_apsr}.} The data include information on the number of pages in each issue (volume), the title, the abstract and the pages spanned by each article, names and institutional affiliation of the authors, and total number of times the abstract, and full-text of the article was viewed. To these data, I add imputed gender of the authors --- proportion of people with the name who were women --- using the R Package {\tt gender} \citet{lincoln2015}.\footnote{Given the age of the author is unknown and given time can be correlated with gender distribution of a name, I assume that the age of an author is uniformly distributed between 25 and 65. This is unsatisfactory still but a variety of trials using variety of ranges of years yields very similar answers.}
 
-Over the past 100 or so years, article length has shown marked variability (see Figure~\ref{fig:pages}). There is a marked see-saw pattern in the average length of the article, but unlike top economics journals we don't see a marked trend towards longer articles \citep{card2013nine, card2014page}. (It is very likely, however, that the length of online appendices has grown substantially.)
+In particular, I investigate whether like top economic journals \citep{card2013nine, card2014page}, the articles in the APSR have gotten longer, reducing the number of articles that can be published conditional on fixed journal space.
+
+Over the past 100 or so years, article length has shown marked variability (see Figure~\ref{fig:pages}). There is a marked see-saw pattern in the average length of the article, but unlike top economics journals we don't see a marked trend towards longer articles. (It is very likely, however, that the length of online appendices has grown substantially.)
 
 Over time, the number of articles per issue has shown a sharp increase --- over 100 years, the number of articles has more than doubled (see Figure~\ref{fig:narticles}). (Though, over the past thirty or so years, the number of articles per issue has remained steady.) Given the two facts --- similar article length, increase in number of articles --- it is obvious that pages per issue would have increased. And so we find (see Figure~\ref{fig:issue}). 
 
