@@ -1,7 +1,7 @@
 '''
 
-  Scrape Meta Data and Abstracts of APSR Articles
-  
+  Scrape Meta Data and Abstracts of CUP Journal Articles
+
 '''
 
 import urllib2
