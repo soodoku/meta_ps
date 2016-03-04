@@ -13,7 +13,7 @@ FINAL_OUTPUT_FILE = "apsr_data.csv"
 AUTHORS_HEADER=""
 MAX_AUTHORS_NUMBER = 10
 for i in range(MAX_AUTHORS_NUMBER):
-    AUTHORS_HEADER = AUTHORS_HEADER + ", author%d, institution%d" %(i+1, i+1,)
+    AUTHORS_HEADER = AUTHORS_HEADER + ", author{0:d}, institution{1:d}".format(i+1, i+1)
     
 HEADER = "article.url, issue.year, issue.volume, issue.date.of.publication, issue.pages, article.title, article.abstract, article.doi, article.pages" + AUTHORS_HEADER + ", article.abstract.views, article.full.text.views"
 
@@ -222,7 +222,7 @@ def getArticleContent(link):
     # Get abstract_views_div and full_text_views_div by through another http request
     aid,tmp = findWithPattern(link,'aid=','&')
     fileid,tmp = findWithPattern(link+"*_*",'fileId=','*_*')
-    viewLink = "http://journals.cambridge.org/action/displayJournalTab?jid=PSR&tab=metrics&compId=%s&fileId=%s" %(aid,fileid)
+    viewLink = "http://journals.cambridge.org/action/displayJournalTab?jid=PSR&tab=metrics&compId={0!s}&fileId={1!s}".format(aid, fileid)
     req2 = urllib2.Request(viewLink)
     response2 = urllib2.urlopen(req2)
     data2 = response2.read()
@@ -252,20 +252,20 @@ def getArticlesInIssue(issue_year, issue_volume, issue_date, issue_pages, issue_
     while len(link)>0:
         # only scrape new link
         if link not in ARTICLE_DATABASE_MARKER:
-            print "   + GET ARTICLE--- %s" % (link,)
+            print "   + GET ARTICLE--- {0!s}".format(link)
             title, abstract, doi, pages, authors, abstract_views, full_text_views = getArticleContent(link)
             #print "---GOT---", title, doi, pages, authors, len(abstract)
 
             authorStr = ""
             for author in authors.keys():
-                authorStr = authorStr + ',"%s","%s"'%(author.replace('"',''), authors[author].replace('"',''))
+                authorStr = authorStr + ',"{0!s}","{1!s}"'.format(author.replace('"',''), authors[author].replace('"',''))
             for i in range (MAX_AUTHORS_NUMBER-len(authors.keys())):
                 authorStr = authorStr + ',"",""'
                 
             # Write to output file
             title = title.replace('"','\'')
             abstract = abstract.replace('"','\'').replace("\n","\\n")
-            rowStr = '"%s","%s","%s","%s","%s","%s","%s","%s","%s"%s,"%s","%s"\n' %(link, issue_year, issue_volume, issue_date, issue_pages, title, abstract, doi, pages, authorStr, abstract_views, full_text_views,)
+            rowStr = '"{0!s}","{1!s}","{2!s}","{3!s}","{4!s}","{5!s}","{6!s}","{7!s}","{8!s}"{9!s},"{10!s}","{11!s}"\n'.format(link, issue_year, issue_volume, issue_date, issue_pages, title, abstract, doi, pages, authorStr, abstract_views, full_text_views)
             myfile.write(rowStr)
 
             # Mark the new row
@@ -278,7 +278,7 @@ def getArticlesInIssue(issue_year, issue_volume, issue_date, issue_pages, issue_
         link,data = getNextArticle(data)
             
 ##################################START SCRAPING#########################################
-print "---START SCRAPING %s---"% (START_LINK,)
+print "---START SCRAPING {0!s}---".format(START_LINK)
 req = urllib2.Request(START_LINK)
 response = urllib2.urlopen(req)
 data = response.read()    
@@ -297,7 +297,7 @@ with open (FINAL_OUTPUT_FILE, "ab+") as myfile:
     # Start scraping    
     year, volume, date, pages, link, data = getNextIssue(data)
     while len(link)>0:
-        print "---GET ISSUES--- %s-%s %s" % (year, volume, link,)
+        print "---GET ISSUES--- {0!s}-{1!s} {2!s}".format(year, volume, link)
         getArticlesInIssue(year, volume, date, pages, link, myfile)
         year, volume, date, pages, link, data = getNextIssue(data)
 
